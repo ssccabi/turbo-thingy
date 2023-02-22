@@ -8,6 +8,7 @@ import './page.css';
 import { AppBar, Box, Drawer } from '@mui/material';
 import { Button } from './Button';
 import { StocksTable } from './StocksTable';
+import { DrawerPane } from './DrawerPane';
 
 const StocksAritcle = styled('article')({
   backgroundColor: "lightblue",
@@ -37,7 +38,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
 
 export function Page(): JSX.Element {
   const theme = useTheme()
-  const [open, setOpen] = useState('')
+  const [open, setOpen] = useState<'fields' | 'sectors' | '' >('')
 
   function openFieldsDrawer() {
     console.log('fields');
@@ -68,7 +69,7 @@ export function Page(): JSX.Element {
           open={Boolean(open)}
           
         >
-          faxom
+          <DrawerPane open={open} />
 
         </Drawer>
         <Main open={Boolean(open)}>

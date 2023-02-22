@@ -32,15 +32,16 @@ export function DateInput({type}: TypeTime) : JSX.Element {
     } */
 
     return <PatternFormat
-        value = '313132131'
+        value = {313132131}
+
         // value = {(type === 'interval') ? '3232131232132' : '12321321321'}
-        mask = '_'
+        // mask = '_'
         // value = {(type === 'date') ? '11.11.2022 / 11.12' : '123/12/12'}
-        customInput={TextField}
-        {...MuiTextFieldProps}
         // format = '##.##.#### / ##.##'
         format = {(typeTime === 'interval') ? '###/##/##' : '##.##.#### / ##.##' }
-        
+        /* customInput={TextField}
+        {...MuiTextFieldProps}
+         */
         // {...props}
     ></PatternFormat>
 }

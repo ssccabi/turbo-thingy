@@ -5,13 +5,14 @@ import './drawerfield.css'
 import { RadioGroupGeneric } from './RadioGroup'
 
 export function DrawerField() : JSX.Element {
-    const [typeTime, setTypeTime] = React.useState('date')
+    const [typeTime, setTypeTime] = React.useState<'date' | 'interval'>('date')
     const [minMax, setMinMax] = React.useState('min')
     const [timeValue, setTimeValue] = React.useState('123456')
 
     function onChangeTypeTime(newValue: string) {
         console.log(newValue)
-        setTypeTime(newValue)
+        const val = (newValue==='interval') ? 'interval' : 'date'
+        setTypeTime(val)
     }
     function onChangeMinMax(newValue: string) {
         console.log(newValue)
