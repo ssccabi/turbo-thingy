@@ -1,0 +1,19 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "include": ["**/*.ts", "**/*.js"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "typeRoots": ["./additional.d.ts"],
+    "target": "es2017",
+    "types": ["node"],
+    /* "paths": {
+      "baseUrl": "./",
+      "*": ["./src/*", "./node_modules/*"]
+    } */
+  },
+  "ts-node": {
+    // "files": true,
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
+}
