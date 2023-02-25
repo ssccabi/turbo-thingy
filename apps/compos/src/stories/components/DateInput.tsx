@@ -1,6 +1,7 @@
 import { Input, TextField, TextFieldProps } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import { IMaskInput } from 'react-imask'
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, { ComponentType, forwardRef, useEffect, useState } from 'react'
 import './dateInput.css'
 import { PatternFormat, NumericFormat, InputAttributes, PatternFormatProps } from 'react-number-format'
 
@@ -12,12 +13,16 @@ interface TypeTime {
 export function DateInput({type}: TypeTime) : JSX.Element {
     // const [typeTime, setTypeTime] = useState('date')
 
-    const MuiTextFieldProps : TextFieldProps = {
+    const muiTextFieldProps : TextFieldProps = {
         variant: 'filled',
         multiline: true,
         label: 'xxxx'
     }
-    
+    const InputTextField : ComponentType = styled(TextField)<TextFieldProps>(({theme}) => ({
+        variant: 'outlined',
+        multiline: true,
+        label: 'xxxx'
+    }))
     const [typeTime, setTypeTime] = useState('time')
 
     useEffect(() => {
@@ -32,15 +37,15 @@ export function DateInput({type}: TypeTime) : JSX.Element {
     } */
 
     return <PatternFormat
-        value = {313132131}
+        // value = {313132131}
 
-        // value = {(type === 'interval') ? '3232131232132' : '12321321321'}
-        // mask = '_'
+        value = {(type === 'interval') ? '1231212' : '121212341212'}
+        mask = '_'
         // value = {(type === 'date') ? '11.11.2022 / 11.12' : '123/12/12'}
         // format = '##.##.#### / ##.##'
         format = {(typeTime === 'interval') ? '###/##/##' : '##.##.#### / ##.##' }
-        /* customInput={TextField}
-        {...MuiTextFieldProps}
+        customInput = {InputTextField}
+        /* {...muiTextFieldProps}
          */
         // {...props}
     ></PatternFormat>

@@ -20,7 +20,7 @@ export function DrawerField() : JSX.Element {
     }
 
     return (
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'auto auto' }}>
+        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', paddingTop: '20px' }}>
             <RadioGroupGeneric labels={['min', 'max', 'value']} onChangeTypeTime={onChangeMinMax}/>
             <RadioGroupGeneric labels={['time', 'interval', 'prev.cl']} onChangeTypeTime={onChangeTypeTime} />
             <DateInput type={typeTime}></DateInput>
