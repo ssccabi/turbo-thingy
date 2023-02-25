@@ -14,7 +14,7 @@ const StocksAritcle = styled('article')({
   backgroundColor: "lightblue",
   padding: 2,
 })
-const drawerWidth = 240;
+const drawerWidth = 340;
 
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{

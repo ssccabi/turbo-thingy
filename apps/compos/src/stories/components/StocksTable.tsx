@@ -53,6 +53,7 @@ export function StocksTable() : JSX.Element {
                 accessorKey: 'symbol',
                 header: 'Symbol',
                 size: 150,
+                enableGlobalFilter: true
             },
             {
                 accessorKey: 'name',
@@ -115,10 +116,13 @@ export function StocksTable() : JSX.Element {
 
             columns={columns}
             data={data} //data is undefined on first render
-            initialState={{ showColumnFilters: true }}
-            manualFiltering
-            manualPagination
-            manualSorting
+            // initialState={{ showColumnFilters: true }}
+            // manualFiltering
+            // manualPagination
+            // manualSorting
+            enableRowVirtualization
+            enablePagination={false}
+            enableGlobalFilterModes
             muiToolbarAlertBannerProps={
                 isError
                 ? {

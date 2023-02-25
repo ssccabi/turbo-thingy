@@ -35,6 +35,16 @@ export function RadioGroupGeneric({labels, onChangeTypeTime} : RadioLabels) {
         // sx={sxDrawer}
         // aria-labelledby="demo-form-control-label-placement"
         name="position"
+        sx={{
+              '& .MuiTypography-root': {
+                fontSize: '0.8rem',
+                transform: 'rotate(-30deg)'
+              },
+              '& .MuiFormControlLabel-root': {
+                lineHeight: 1,
+                margin: 0
+              }
+            }}
         defaultValue={labels[0]}
         onChange={handleChange}
       > 
@@ -42,7 +52,8 @@ export function RadioGroupGeneric({labels, onChangeTypeTime} : RadioLabels) {
             <FormControlLabel
             value={label}
             // sx={{fontSize: 5}}
-            control={<Radio size='small'/>}
+            control={<Radio 
+            size='small'/>}
             label={label}
             labelPlacement="top"
           />    
