@@ -1,4 +1,4 @@
-import { Page } from "../../compos/src/stories/components/Page"
+import { Page } from "compos"
 
 export default function Docs() {
   return (
